@@ -2,6 +2,8 @@ import { FcSearch } from "react-icons/fc";
 import style from "./home.module.css";
 import { useEffect, useRef, useState } from "react";
 import Match from "./Match";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; 
 
 type Props = {
     searchText : string;
@@ -41,6 +43,16 @@ const Home = ({
     const [nickname, setNickname] = useState(''); // searchText를 새로 저장하기 위해 nickname을 만듬
     // 검색버튼 onClick 함수
     const searchClick = () => {
+        if (!searchText.trim()) {
+            toast.error('소환사명을 입력해주세요.');
+            return;
+        } 
+        if (!tagLineText.trim()) {
+            toast.error('태그를 입력해주세요.');
+            return;
+        }
+
+
         getPlayerInformation();
         getPlayerGames();
         getPlayerLeague();
@@ -78,7 +90,6 @@ const Home = ({
                             });
                         }}
                         placeholder="소환사명"
-                        onKeyPress={onEnterPress}
                         spellCheck="false"
                         // ref={searchInputRef}
                     />
@@ -89,11 +100,12 @@ const Home = ({
                                 return prev = encodeURIComponent(e.target.value);
                             })
                         }}
+                        onKeyPress={onEnterPress}
                         placeholder="태그 (# 제외)"
                         className={style['app-searchBox2']}
                     />
                     {/* 검색버튼 */}
-                    <button type="submit" name="submit" onClick={searchClick} className={style['app-searchButton']} >
+                    <button type="submit" name="submit" onClick={searchClick} className={style['app-searchButton']} onKeyPress={onEnterPress} >
                         <FcSearch className={style['app-searchButton-icons']}/>
                     </button>
                 </div>

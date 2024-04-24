@@ -15,8 +15,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 import style from "./header.module.css";
 import { useNavigate } from 'react-router-dom';
 
-const pages = ['전적검색', '챔피언', '아이템'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages : string[] = ['전적검색', '챔피언', '아이템'];
+const settings : string[] = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -35,7 +35,9 @@ function Header() {
     };
 
     const handleMenuRoute = (menu : string) => {
-        if (menu === '챔피언') {
+        if (menu === '전적검색') {
+            navigate(`/`)
+        } else if (menu === '챔피언') {
             navigate('/championInfo')
         } else if (menu === '아이템') {
             navigate('/item')
