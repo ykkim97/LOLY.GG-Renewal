@@ -1,0 +1,46 @@
+.participant-Container {
+    display: flex;
+    padding: 2px;
+    margin: 2px;
+    align-items: center;
+    border: 1px solid black;
+    background: white;
+}
+
+.playing-Champions {
+    width: 35px;
+    height: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.participant-name {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.team-blue,
+.team-red {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.team-blue {
+    color: rgb(37, 145, 218);
+}
+
+.team-red {
+    color: rgb(241, 89, 89);
+}
+
+.spell-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.spell {
+    width: 28px;
+    height: 28px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

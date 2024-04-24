@@ -3,6 +3,12 @@ import { FaArrowDown } from "react-icons/fa";
 import styles from "./match.module.css";
 import SummonerProfile from "./components/SummonerProfile";
 import Proficiency from "./components/Proficiency";
+import ActiveGames from "./components/ActiveGames";
+import PlayedChampion from "./components/PlayedChampion";
+import PersonalKda from "./components/PersonalKda";
+import KillRate from "./components/KillRate";
+import ParticipantsData from "./components/ParticipantsData";
+import MatchDetail from "./components/MatchDetail";
 
 type Props = {
     playerInformation: any;
@@ -32,10 +38,6 @@ const Match = ({
     const [visible, setVisible] = useState([...visibleArr]); // 매치상세기록이 열려있는지 판단하기위한 state
     const [open, setOpen] = useState(false); // 상세기록컴포넌트를 열고 닫을 때 사용할 state
     const [isClickedActiveGames, setIsClickedActiveGames] = useState(false);
-
-    useEffect(() => {
-        console.log(gameList, "gameList")
-    }, [gameList])
 
     gameList.map((gameData, index) => {
         visibleArr.push(false)
@@ -89,11 +91,11 @@ const Match = ({
                             className={styles['activeGames-button']}
                             title="현재 인게임 정보를 확인하세요!"
                         >인게임 정보</button>
-                        {/* {isClickedActiveGames && 
+                        {isClickedActiveGames && 
                             <ActiveGames 
                                 activeGames={activeGames} 
                             />
-                        } */}
+                        }
 
                         {
                             gameList.map((gameData, index) => (
@@ -103,29 +105,29 @@ const Match = ({
                                         <h4 className={styles['gameData-gamemode']}>{gameData.info.gameMode}</h4>
                                         {/* 플레이한 챔피언 */}
                                         <div className={styles['gameData-champion']}>
-                                            {/* <PlayedChampion 
+                                            <PlayedChampion 
                                                 gameData={gameData}
                                                 index={index}
-                                                onErrorImg={onErrorImg}
+                                                // onErrorImg={onErrorImg}
                                                 nickname={nickname}
-                                            /> */}
+                                            />
                                         </div>
                                         {/* 개인 KDA 기록 */}
                                         <div className={styles['gameData-kda']}>
-                                            {/* <PersonalKda 
+                                            <PersonalKda 
                                                 gameData={gameData}
                                                 index={index}
                                                 nickname={nickname}
-                                            /> */}
+                                            />
                                         </div>
                                         {/* 킬 관여 */}
                                         <div className={styles['gameData-individual']}>
-                                            {/* <KillRate 
+                                            <KillRate 
                                                 gameData={gameData}
                                                 index={index}
                                                 killsOfGamelist={killsOfGamelist}
                                                 nickname={nickname}
-                                            /> */}
+                                            />
                                         </div>
                                         {/* 참가자 정보 */}
                                         <div className={styles['gameData-team']}>
@@ -136,12 +138,11 @@ const Match = ({
                                                     {gameData.info.participants.map((participant, index) => {
                                                         if (index < 5) {
                                                             return (
-                                                                <></>
-                                                                // <ParticipantsData 
-                                                                //     participant={participant}
-                                                                //     index={index}
-                                                                //     onErrorImg={onErrorImg}
-                                                                // />
+                                                                <ParticipantsData 
+                                                                    participant={participant}
+                                                                    index={index}
+                                                                    // onErrorImg={onErrorImg}
+                                                                />
                                                             )
                                                         }
                                                     })}
@@ -154,12 +155,11 @@ const Match = ({
                                                     {gameData.info.participants.map((participant, index) => {
                                                         if (index >= 5 && index < 10) {
                                                             return (
-                                                                <></>
-                                                                // <ParticipantsData 
-                                                                //     participant={participant}
-                                                                //     index={index}
-                                                                //     onErrorImg={onErrorImg}
-                                                                // />
+                                                                <ParticipantsData 
+                                                                    participant={participant}
+                                                                    index={index}
+                                                                    // onErrorImg={onErrorImg}
+                                                                />
                                                             )
                                                         }
                                                     })}
@@ -192,10 +192,10 @@ const Match = ({
                                         null :   
                                         <div>
                                             {/* 매치상세기록 컴포넌트 */}
-                                            {/* <MatchDetail 
+                                            <MatchDetail 
                                                 gameData={gameData}
-                                                onErrorImg={onErrorImg}
-                                            /> */}
+                                                // onErrorImg={onErrorImg}
+                                            />
                                         </div>
                                     }
                                 </div>

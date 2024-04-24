@@ -81,8 +81,8 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log(leagueList, "leagueList")
-  }, [leagueList])
+    console.log(gameList, "gameList")
+  }, [gameList])
 
   return (
     <Layout>

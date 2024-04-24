@@ -1,13 +1,15 @@
 import styles from "./SummonerProfile.module.css";
-import Emblem_Iron from "../../../assets/data/Emblems/Emblem_Iron.png"
-import Emblem_Bronze from "./../../../assets/data/Emblems/Emblem_Bronze.png"
-import Emblem_Silver from "./../../../assets/data/Emblems/Emblem_Silver.png"
-import Emblem_Gold from "./../../../assets/data/Emblems/Emblem_Gold.png"
-import Emblem_Platinum from "./../../../assets/data/Emblems/Emblem_Platinum.png"
-import Emblem_Diamond from "./../../../assets/data/Emblems/Emblem_Diamond.png"
-import Emblem_Master from "./../../../assets/data/Emblems/Emblem_Master.png"
-import Emblem_Grandmaster from "./../../../assets/data/Emblems/Emblem_Grandmaster.png"
-import Emblem_Challenger from "./../../../assets/data/Emblems/Emblem_Challenger.png"
+import Emblem_Iron from "../../../assets/data/Emblems/Rank=Iron.png"
+import Emblem_Bronze from "./../../../assets/data/Emblems/Rank=Bronze.png"
+import Emblem_Silver from "./../../../assets/data/Emblems/Rank=Silver.png"
+import Emblem_Gold from "./../../../assets/data/Emblems/Rank=Gold.png"
+import Emblem_Platinum from "./../../../assets/data/Emblems/Rank=Platinum.png"
+import Emblem_Diamond from "./../../../assets/data/Emblems/Rank=Diamond.png"
+import Emblen_Emerald from "./../../../assets/data/Emblems/Rank=Emerald.png"
+import Emblem_Master from "./../../../assets/data/Emblems/Rank=Master.png"
+import Emblem_Grandmaster from "./../../../assets/data/Emblems/Rank=Grandmaster.png"
+import Emblem_Challenger from "./../../../assets/data/Emblems/Rank=Challenger.png"
+import { useEffect } from "react";
 
 type Props = {
     playerInformation : any;
@@ -16,11 +18,21 @@ type Props = {
 
 // 소환사 프로필 컴포넌트
 const SummonerProfile = ({ playerInformation, leagueList } : Props) => {
-    const emblemImgs = [{key : "IRON", Emblem : Emblem_Iron}, {key : "BRONZE", Emblem : Emblem_Bronze}, 
-        {key : "SILVER", Emblem : Emblem_Silver}, {key : "GOLD", Emblem : Emblem_Gold},
-        {key : "PLATINUM", Emblem : Emblem_Platinum}, {key : "DIAMOND", Emblem : Emblem_Diamond},
-        {key : "MASTER", Emblem : Emblem_Master}, {key : "GRNADMASTER", Emblem : Emblem_Grandmaster}, 
+    const emblemImgs = [
+        {key : "IRON", Emblem : Emblem_Iron}, 
+        {key : "BRONZE", Emblem : Emblem_Bronze}, 
+        {key : "SILVER", Emblem : Emblem_Silver}, 
+        {key : "GOLD", Emblem : Emblem_Gold},
+        {key : "PLATINUM", Emblem : Emblem_Platinum}, 
+        {key : "EMERALD", Emblem : Emblen_Emerald},
+        {key : "DIAMOND", Emblem : Emblem_Diamond},
+        {key : "MASTER", Emblem : Emblem_Master}, 
+        {key : "GRNADMASTER", Emblem : Emblem_Grandmaster}, 
         {key : "CHALLENGER", Emblem : Emblem_Challenger}];
+
+    useEffect(() => {
+        console.log(playerInformation, "playerInformation")
+    }, [playerInformation])
     
     return (
         <>

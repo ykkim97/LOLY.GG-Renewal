@@ -1,0 +1,10 @@
+.gameData-championMiniFaceImg {
+    width: 25px;
+    margin-right: 5px;
+}
+
+.gameData-usersInfoBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,21 @@
+.activeGames-Container {
+    width: 87%;
+    background: linear-gradient(to right, #c3c5ce, #b4d1f3, #c3c5ce);
+    margin: auto;
+    padding: 20px;
+}
+
+#gameMode {
+    text-align: center;
+}
+
+.banned-Container {
+    text-align: center;
+    border: 1px solid black;
+    background: rgb(236, 65, 34);
+}
+
+.banned-Champions {
+    width: 35px;
+    height: 35px;
+}
