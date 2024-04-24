@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import styles from "./match.module.css";
 import SummonerProfile from "./components/SummonerProfile";
+import Proficiency from "./components/Proficiency";
 
 type Props = {
     playerInformation: any;
@@ -72,13 +73,13 @@ const Match = ({
                 (
                     gameList.length !== 0 ? 
                     <>
-                        <h3 className={styles["gameData-title"]}>검색결과</h3>
+                        <h3 className={styles["gameData-title"]}>검색 결과</h3>
                         <SummonerProfile
                             playerInformation={playerInformation}
                             leagueList={leagueList} 
                         />
                         {/* 숙련도 TOP 3 */}
-                        {/* <Proficiency proficiency={proficiency}/> */}
+                        <Proficiency proficiency={proficiency}/>
 
                         {/* 현재 게임 정보 */}
                         <button 

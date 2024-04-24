@@ -1,0 +1,44 @@
+.proficiency-title {
+    margin-left: 80px;
+    color: #e9f1fa;
+}
+
+.proficiency-Container {
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.proficiency-championData {
+    flex-basis: 33%;
+    background: linear-gradient(to right, #c3c5ce, #b4d1f3, #c3c5ce);
+    box-shadow: 0 0 5px 1px rgb(66 152 173);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px
+}
+
+.proficiency-rank {
+    text-align: center;
+    width: 100%;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.proficiency-infoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proficiency-image {
+    width: 120px;
+    height: 120px;
+}
+
+.proficiency-info {
+    /* border: 1px solid black; */
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 12.5px;
+}

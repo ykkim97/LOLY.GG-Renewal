@@ -71,12 +71,13 @@ const Home = ({
                 <div>
                     <input 
                         type="text" 
-                        className={style['app-searchBox']}
+                        className={style['app-searchBox1']}
                         onChange={(e) => {
                             setSearchText((prev) => {
                                 return prev = encodeURIComponent(e.target.value);
                             });
                         }}
+                        placeholder="소환사명"
                         onKeyPress={onEnterPress}
                         spellCheck="false"
                         // ref={searchInputRef}
@@ -88,6 +89,8 @@ const Home = ({
                                 return prev = encodeURIComponent(e.target.value);
                             })
                         }}
+                        placeholder="태그 (# 제외)"
+                        className={style['app-searchBox2']}
                     />
                     {/* 검색버튼 */}
                     <button type="submit" name="submit" onClick={searchClick} className={style['app-searchButton']} >

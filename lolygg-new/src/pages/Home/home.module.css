@@ -19,16 +19,27 @@
     padding: 20px;
 }
 
-.app-searchBox {
-    width: 50%;
+.app-searchBox1 {
+    width: 40%;
     height: 30px;
     font-size: 15px;
     vertical-align: middle;
     /* border: 3px solid black; */
     border: none;
+    border-right: 2px solid grey;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     padding: 5px;
+}
+
+.app-searchBox2 {
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    border-right: 2px solid grey;
+    vertical-align: middle;
 }
 
 .app-searchButton {
