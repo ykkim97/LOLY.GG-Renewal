@@ -1,0 +1,14 @@
+.championInfo-title {
+    text-align: center;
+    border: 1px dotted rgb(206, 202, 202);
+    margin: auto;
+    padding: 40px;
+    font-size: 25px;
+    background: linear-gradient(to right, #21232b, #3687e4, #21232b);
+    color: #ffffff;
+}
+
+.championInfo-container {
+    text-align: center;
+    background-color: #21232b;
+}

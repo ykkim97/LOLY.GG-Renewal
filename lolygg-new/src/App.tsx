@@ -4,7 +4,9 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import ChampionInfo from './pages/ChampionInfo/ChampionInfo'
 
+
 function App() {
+
   return (
     <Layout>
       <Routes>
@@ -15,7 +17,10 @@ function App() {
         </Route>
         <Route
           path="/championInfo"
-          element={<ChampionInfo />}
+          element={
+            <ChampionInfo 
+            />
+          }
         >
         </Route>
       </Routes>

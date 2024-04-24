@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const app = express();
-require('dotenv').config({ path : '../LOL-Info-Web/.env' });
+require('dotenv').config({ path : './.env' });
 
 // Port Number
 const PORT = 4000;

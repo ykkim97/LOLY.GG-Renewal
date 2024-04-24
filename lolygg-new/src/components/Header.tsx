@@ -59,7 +59,7 @@ function Header() {
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
+                            fontFamily: 'nanumgothic',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
@@ -115,7 +115,7 @@ function Header() {
                         mr: 2,
                         display: { xs: 'flex', md: 'none' },
                         flexGrow: 1,
-                        fontFamily: 'monospace',
+                        fontFamily: 'nanumgothic',
                         fontWeight: 700,
                         letterSpacing: '.3rem',
                         color: 'inherit',
@@ -129,7 +129,7 @@ function Header() {
                                 <Button
                                     key={page}
                                     onClick={() => handleMenuRoute(page)}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                    sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'nanumgothic', }}
                                 >
                                     {page}
                                 </Button>

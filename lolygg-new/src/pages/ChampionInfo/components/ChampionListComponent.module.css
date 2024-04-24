@@ -1,0 +1,16 @@
+.championList-champContainer {
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+    padding: 20px;
+    margin: 13px;
+    box-shadow: 0 0 5px 1px rgb(66, 152, 173);
+    background: linear-gradient(to right, #c3c5ce, #b4d1f3, #c3c5ce);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.championList-img {
+    width: 80px;
+    height: 80px;
+}
