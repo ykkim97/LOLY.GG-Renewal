@@ -1,0 +1,96 @@
+.summonerProfile-container {
+    /* background: linear-gradient(to bottom, #edf1f1, #f1f5f5); */
+    background: linear-gradient(to right, #c3c5ce, #c7def7, #c3c5ce);
+    width: 90%;
+    height: 280px;
+    margin: 20px auto;
+    margin-bottom: 5vh;
+}
+
+.summonerProfile-profile {
+    margin: auto;
+    margin-left: 20px;
+    margin-top: 7px;
+    width: 33%;
+    height: 240px;
+    box-shadow: 4px 4px 6px 2px grey;
+    padding: 10px;
+    float: left;
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+.summonerProfile-profile-userInfo {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#summonerProfileIcon {
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 35px;
+}
+
+#summonerName {
+    font-size: 25px;
+}
+
+#summonerLevel {
+    font-size: 20px;
+}
+
+.summonerProfile-rankInfo {
+    display: flex;
+    width: 60%;
+    height: 254px;
+    float: right;
+    box-shadow: 4px 4px 6px 2px grey;
+    margin-top: 10px;
+    margin-right: 20px;
+    padding: 2px;
+    font-size: 10px;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+
+.summonerProfile-unRanked {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(100, 97, 97);
+    padding-bottom: 10px;
+}
+
+.summonerProfile-soloRank {
+    width: 50%;
+    font-size: 15px;
+    list-style: none;
+    margin: 0px;
+    padding: 3px;
+}
+
+.summonerProfile-soloRank li {
+    text-align: center;
+}
+
+.summonerProfile-freeRank {
+    width: 50%;
+    font-size: 15px;
+    list-style: none;
+    margin: 0px;
+    padding: 3px;
+}
+
+.summonerProfile-freeRank li {
+    text-align: center;
+}
+
+.emblemImg {
+    width: 140px;
+    height: 140px;
+    text-align: center;
+}

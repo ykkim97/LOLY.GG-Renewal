@@ -16,7 +16,7 @@ let corsOptions = {
 app.use(cors(corsOptions));
 
 // API key
-const API_KEY = process.env.TEST_KEY;
+const API_KEY : string = process.env.TEST_KEY || '';
 
 // 아이템 정보를 가져오는 함수
 const getItemInfomation = () => {
@@ -28,9 +28,8 @@ const getItemInfomation = () => {
 }
 
 // 소환사 정보를 가져오는 함수
-const getPlayerInformation = (PUUID) => {
-    // return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
-    return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${PUUID}?api_key=${API_KEY}`)
+const getPlayerInformation = (playerName) => {
+    return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
         .then(response => {
             return response.data;
         })
@@ -38,11 +37,8 @@ const getPlayerInformation = (PUUID) => {
 }
 
 // 소환사의 puuid값을 가져오는 함수
-const getPlayerPUUID = (playerName, tagLine) => {
-    console.log('playerName>>>' + playerName);
-    console.log('tagLine>>>' + tagLine);
-    // return axios.get(`https://asia.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}/${tagLine}?api_key=${API_KEY}`)
-    return axios.get(`https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${playerName}/${tagLine}?api_key=${API_KEY}`)
+const getPlayerPUUID = (playerName) => {
+    return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
         .then(response => {
             return response.data.puuid;
         })
@@ -50,9 +46,8 @@ const getPlayerPUUID = (playerName, tagLine) => {
 }
 
 // 소환사의 id값을 가져오는 함수 (id는 encryptedSummonerId값)
-const getPlayerID = (PUUID) => {
-    // return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
-    return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${PUUID}?api_key=${API_KEY}`)
+const getPlayerID = (playerName) => {
+    return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
         .then(response => {
             return response.data.id;
         })
@@ -79,24 +74,18 @@ app.get('/item', async (req, res) => {
 // localhost:4000/playerInformation
 app.get('/playerInformation', async (req, res) => {
     const playerName = req.query.searchText;
-    const playerTag = req.query.tagLineText;
-
-    const PUUID = await getPlayerPUUID(playerName, playerTag);
 
     // information (소환사 정보 얻어오기)
-    const information = await getPlayerInformation(PUUID);
+    const information = await getPlayerInformation(playerName);
     res.json(information); 
 })
 
 // GET acivegames (현재 게임 정보 가져오기)
 app.get('/activegames', async (req, res) => {
     const playerName = req.query.searchText;
-    const playerTag = req.query.tagLineText;
-
-    const PUUID = await getPlayerPUUID(playerName, playerTag);
 
     // id
-    const id = await getPlayerID(PUUID);
+    const id = await getPlayerID(playerName);
     const API_CALL = `https://kr.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${id}?api_key=${API_KEY}`;
     const activegames = await axios.get(API_CALL)
         .then(response => response.data)
@@ -108,13 +97,11 @@ app.get('/activegames', async (req, res) => {
 // localhost:4000/proficiency
 app.get('/proficiency', async (req, res) => {
     const playerName = req.query.searchText;
-    const playerTag = req.query.tagLineText;
-
     // id
     const id = await getPlayerID(playerName);
 
     // 2024-03-12 API 변경 수정
-    const PUUID = await getPlayerPUUID(playerName, playerTag);
+    const PUUID = await getPlayerPUUID(playerName);
     
     const API_CALL = `https://kr.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/${PUUID}?api_key=${API_KEY}`;
     const proficiency = await axios.get(API_CALL)
@@ -127,9 +114,9 @@ app.get('/proficiency', async (req, res) => {
 // localhost:4000/past10Games
 app.get('/past10Games', async (req, res) => {
     const playerName = req.query.searchText; // params를 query로 받아옴(검색기능)
-    const playerTag = req.query.tagLineText;
 
-    const PUUID = await getPlayerPUUID(playerName, playerTag);
+    // PUUID (puuid 값 얻어오기)
+    const PUUID = await getPlayerPUUID(playerName);
     const API_CALL = `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${PUUID}/ids?start=0&count=20&api_key=${API_KEY}`
 
     // its going to give us a list of game IDs
@@ -157,10 +144,9 @@ app.get('/past10Games', async (req, res) => {
 // localhost:4000/tier
 app.get('/tier', async (req, res) => {
     const playerName = req.query.searchText;
-    const playerTag = req.query.tagLineText;
-    const PUUID = await getPlayerPUUID(playerName, playerTag);
-    const ID = await getPlayerID(PUUID);
+    const ID = await getPlayerID(playerName);
     const API_CALL = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${ID}?api_key=${API_KEY}`;
+
     const leagueDataArray = [];
     
     const leagueData = await axios.get(API_CALL)

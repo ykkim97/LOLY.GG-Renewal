@@ -99,7 +99,7 @@ function Header() {
                         }}
                         >
                         {pages.map((page) => (
-                            <MenuItem key={page} onClick={handleCloseNavMenu}>
+                            <MenuItem key={page} onClick={() => handleMenuRoute(page)}>
                             <Typography textAlign="center">{page}</Typography>
                             </MenuItem>
                         ))}
@@ -122,7 +122,7 @@ function Header() {
                         textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        LOLY.GG
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) =>  (
