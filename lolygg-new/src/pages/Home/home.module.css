@@ -1,0 +1,54 @@
+.search-container {
+    text-align: center;
+    background: linear-gradient(to right, #21232b, #3687e4, #21232b);
+    color: #ffffff;
+    height: 200px;
+    padding: 20px;
+}
+
+.page-title {
+    display: block;
+    font-size: 40px;
+    font-family: NanumGothic;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.app-searchBox {
+    width: 50%;
+    height: 30px;
+    font-size: 15px;
+    vertical-align: middle;
+    /* border: 3px solid black; */
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.app-searchButton {
+    background-color: rgb(255, 255, 255);
+    /* border: 3px solid #21232b; */
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: nanumgothic;
+}
+
+.app-searchButton-icons {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.app-searchButton:hover {
+    background-color: rgb(226, 221, 221);
+}
+
+.match-record {
+    padding-bottom: 20px;
+    background: linear-gradient(to right, #21232b, #3687e4, #21232b);
+}
