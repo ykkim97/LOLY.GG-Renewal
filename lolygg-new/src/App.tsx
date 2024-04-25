@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import ItemInfo from './pages/ItemInfo/ItemInfo'
 import ItemDetailInfo from './pages/ItemInfo/ItemDetailInfo'
+import ChampionDetailInfo from './pages/ChampionInfo/ChampionDetailInfo'
 
 
 function App() {
@@ -119,6 +120,16 @@ function App() {
           }
         >
         </Route>
+
+        {/* Route => /championInfo/:id */}
+        <Route
+          path='/championInfo/:id'
+          element={
+              <ChampionDetailInfo
+                  item={item}
+              />
+          }
+      ></Route>
 
         <Route
           path="/item"
