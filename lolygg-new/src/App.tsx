@@ -114,9 +114,7 @@ function App() {
         <Route
           path="/championInfo"
           element={
-            <ChampionInfo
-              
-            />
+            <ChampionInfo/>
           }
         >
         </Route>
@@ -134,9 +132,7 @@ function App() {
         <Route
           path="/item"
           element={
-            <ItemInfo
-              
-            />
+            <ItemInfo />
           }
         >
         </Route>
@@ -145,10 +141,10 @@ function App() {
           path='/item/:id'
           element={
               <ItemDetailInfo 
-                  item={item}
+                item={item}
               />
           }
-      ></Route>
+        ></Route>
 
       </Routes>
     </Layout>
