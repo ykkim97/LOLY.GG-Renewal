@@ -68,6 +68,6 @@
 }
 
 .match-record {
-    padding-bottom: 20px;
+    /* padding-top: 40px; */
     background: linear-gradient(to right, #21232b, #3687e4, #21232b);
 }

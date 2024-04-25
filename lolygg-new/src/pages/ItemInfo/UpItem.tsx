@@ -17,6 +17,7 @@ const UpItem = ({ findItemObject, itemObject } : Props) => {
                 <div 
                     className={styles['UpItem']}
                     onClick={() => {navigate(`/item/${id}`)}}
+                    key={id}
                 >
                     <img 
                         src={`https://ddragon.leagueoflegends.com/cdn/14.8.1/img/item/${id}.png`} 

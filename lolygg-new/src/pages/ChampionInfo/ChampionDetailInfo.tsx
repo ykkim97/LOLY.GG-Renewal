@@ -49,7 +49,9 @@ const ChampionDetailInfo = ({
         recommendedArray = championDetailEntries[0].recommended;
 
         // mode값이 'CLASSIC'인 것을 찾아서 recoSRItemArray에 저장(일반 5X5게임 기준 추천아이템을 구현하기 위해)
-        recoSRItemArray = recommendedArray.find(reco => reco.mode === 'CLASSIC')
+        recoSRItemArray = recommendedArray?.find(reco => reco.mode === 'CLASSIC')
+
+        console.log(recoSRItemArray, "recoSRItemArray");
 
         // 각 state를 그에 맞게 변경
         setSkills([...spellsArray]);

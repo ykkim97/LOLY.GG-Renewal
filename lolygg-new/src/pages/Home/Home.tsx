@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Match from "./Match";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; 
+import Background from "../components/Background";
 
 type Props = {
     searchText : string;
@@ -110,6 +111,8 @@ const Home = ({
                     </button>
                 </div>
             </div>
+
+            {/* <Background /> */}
 
             {/* 매치기록 */}
             <div className={style['match-record']}>

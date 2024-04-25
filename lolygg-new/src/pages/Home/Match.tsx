@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import styles from "./match.module.css";
 import SummonerProfile from "./components/SummonerProfile";
@@ -9,6 +9,7 @@ import PersonalKda from "./components/PersonalKda";
 import KillRate from "./components/KillRate";
 import ParticipantsData from "./components/ParticipantsData";
 import MatchDetail from "./components/MatchDetail";
+import Background from "../components/Background";
 
 type Props = {
     playerInformation: any;
@@ -29,7 +30,7 @@ const Match = ({
     nickname,
     activeGames,
 } : Props) => {
-
+    const [loading, setLoading] = useState<boolean>(false);
     const summonerTeamIdsOfGamelist : string[] = []; // 소환사가 속한 팀의 teamId들을 저장할 summonerTeamIdsOfGamelist 배열 생성
     const killsOfGamelist : any[] = []; // 소환사가 속한 팀의 전체 킬 수들을 저장할 killsOfGamelist 배열 생성
     const summonerTeamIsWin : any[] = []; // 소환사가 속한 팀의 승리 여부들을 저장할 summonerTeamIsWin 배열 생성
@@ -64,14 +65,12 @@ const Match = ({
         setVisible([...visibleArr])
     }, [])
 
-    useEffect(() => {
-        console.log(nickname, "nickname")
-    }, [nickname])
-
     return (
         <>
             {nickname === '' ?
-                <div></div> : 
+                <div>
+                    <Background />
+                </div> : 
                 (
                     gameList.length !== 0 ? 
                     <>
@@ -138,11 +137,13 @@ const Match = ({
                                                     {gameData.info.participants.map((participant, index) => {
                                                         if (index < 5) {
                                                             return (
-                                                                <ParticipantsData 
-                                                                    participant={participant}
-                                                                    index={index}
-                                                                    // onErrorImg={onErrorImg}
-                                                                />
+                                                                <React.Fragment key={index}>
+                                                                    <ParticipantsData 
+                                                                        participant={participant}
+                                                                        index={index}
+                                                                        // onErrorImg={onErrorImg}
+                                                                    />
+                                                                </React.Fragment>
                                                             )
                                                         }
                                                     })}
@@ -155,11 +156,13 @@ const Match = ({
                                                     {gameData.info.participants.map((participant, index) => {
                                                         if (index >= 5 && index < 10) {
                                                             return (
-                                                                <ParticipantsData 
-                                                                    participant={participant}
-                                                                    index={index}
-                                                                    // onErrorImg={onErrorImg}
-                                                                />
+                                                                <React.Fragment key={index}>
+                                                                    <ParticipantsData 
+                                                                        participant={participant}
+                                                                        index={index}
+                                                                        // onErrorImg={onErrorImg}
+                                                                    />
+                                                                </React.Fragment>
                                                             )
                                                         }
                                                     })}
