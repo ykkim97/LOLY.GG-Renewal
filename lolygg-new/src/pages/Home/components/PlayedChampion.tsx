@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 type Props = {
     gameData : any;
@@ -14,6 +14,9 @@ const PlayedChampion = ({
     // onErrorImg,
     nickname,
 } : Props) => {
+    // useEffect(() => {
+    //     console.log(gameData, "gameData")
+    // }, [gameData])
     return (
         <>
             {gameData.info.participants.map(participant => {

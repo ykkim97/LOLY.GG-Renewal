@@ -20,7 +20,7 @@ const API_KEY = process.env.TEST_KEY;
 
 // 아이템 정보를 가져오는 함수
 const getItemInfomation = () => {
-    return axios.get(`https://ddragon.leagueoflegends.com/cdn/10.24.1/data/ko_KR/item.json`)
+    return axios.get(`https://ddragon.leagueoflegends.com/cdn/14.8.1/data/ko_KR/item.json`)
         .then(response => {
             return response.data;
         })

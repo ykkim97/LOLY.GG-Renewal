@@ -1,0 +1,43 @@
+.itemIntro-imgContainer {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemIntro-img {
+    width: 280px;
+    height: 280px;
+    padding: 50px;
+    background: #eeeded;
+    box-shadow: 0 0 5px 1px rgb(66 152 173);
+    background: linear-gradient(to right, #c3c5ce, #d2e3f7, #c3c5ce);
+}
+
+.itemIntro-infoContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: 50px;
+}
+
+#item-name {
+    font-size: 50px;
+    color: #ffffff;
+}
+
+#item-gold {
+    color: rgb(248, 248, 0);
+}
+
+#item-simpledesc {
+    color: #f3f3f3;
+}
+
+#item-detaildesc {
+    color: rgb(202, 202, 202);
+}

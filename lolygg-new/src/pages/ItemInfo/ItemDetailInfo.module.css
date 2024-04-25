@@ -1,0 +1,29 @@
+.itemDetailInfo-Container {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #21232b, #3687e4, #21232b);
+}
+
+.itemDetail-headerInfo {
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgb(66 152 173);
+}
+
+.itemDetail-mainInfo {
+    box-sizing: border-box;
+    border-bottom: 2px solid rgb(66 152 173);
+    width: 100%;
+    padding: 20px;
+}
+
+.item-desc {
+    color: #ffffff;
+}

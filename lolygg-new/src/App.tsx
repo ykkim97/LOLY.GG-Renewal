@@ -5,6 +5,8 @@ import Home from './pages/Home/Home'
 import ChampionInfo from './pages/ChampionInfo/ChampionInfo'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import ItemInfo from './pages/ItemInfo/ItemInfo'
+import ItemDetailInfo from './pages/ItemInfo/ItemDetailInfo'
 
 
 function App() {
@@ -80,10 +82,6 @@ function App() {
     getItemInfomation();
   }, [])
 
-  useEffect(() => {
-    console.log(gameList, "gameList")
-  }, [gameList])
-
   return (
     <Layout>
       <Routes>
@@ -121,6 +119,26 @@ function App() {
           }
         >
         </Route>
+
+        <Route
+          path="/item"
+          element={
+            <ItemInfo
+              
+            />
+          }
+        >
+        </Route>
+
+        <Route
+          path='/item/:id'
+          element={
+              <ItemDetailInfo 
+                  item={item}
+              />
+          }
+      ></Route>
+
       </Routes>
     </Layout>
   )
