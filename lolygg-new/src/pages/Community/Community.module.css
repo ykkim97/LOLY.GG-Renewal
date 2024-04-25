@@ -53,9 +53,16 @@
     transition: all 0.4s;
 }
 
-.boardSection {
+.boardContainerSection {
     background-color: #414040;
     height: inherit;
+    padding: 10px;
+}
+
+.filterSection {
+    background: linear-gradient(to right, #c3c5ce, #b4d1f3, #c3c5ce);
+    width: 100%;
+    height: 50px;
 }
 
 

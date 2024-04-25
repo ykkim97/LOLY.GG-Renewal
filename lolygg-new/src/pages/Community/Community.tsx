@@ -34,7 +34,14 @@ const Community = () => {
                         })}
                     </Grid>
                 </Grid>
-                <Grid xs={10} className={styles['boardSection']}>글 영역</Grid>
+                <Grid xs={10} className={styles['boardContainerSection']}>
+                    <div className={styles['filterSection']}>
+                        filter section
+                    </div>
+                    <div className={styles['boardSection']}>
+                        board section
+                    </div>
+                </Grid>
             </Grid>
         </>
     )
