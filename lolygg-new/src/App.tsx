@@ -8,6 +8,7 @@ import axios from 'axios'
 import ItemInfo from './pages/ItemInfo/ItemInfo'
 import ItemDetailInfo from './pages/ItemInfo/ItemDetailInfo'
 import ChampionDetailInfo from './pages/ChampionInfo/ChampionDetailInfo'
+import Community from './pages/Community/Community'
 
 
 function App() {
@@ -146,6 +147,14 @@ function App() {
           }
         ></Route>
 
+        <Route
+          path='/community'
+          element={
+              <Community 
+
+              />
+          }
+        ></Route>
       </Routes>
     </Layout>
   )

@@ -1,0 +1,62 @@
+.CommunityInfo-title {
+    text-align: center;
+    /* border: 1px dotted rgb(206, 202, 202); */
+    margin: auto;
+    padding: 40px;
+    font-size: 25px;
+    background: linear-gradient(to right, #21232b, #3687e4, #21232b);
+    color: #ffffff;
+}
+
+.CommunityInfo-container {
+    background-color: #21232b;
+    width: 100%;
+    height: 80dvh;
+    display: flex;
+    align-items: center;
+}
+
+.CommunityInfo-container > h3 {
+    color: white;
+}
+
+.leftSection {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    height: inherit;
+}
+
+.leftMenu {
+    width: 100%;
+    padding: 5px;
+}
+
+.menuBox {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border : 1px solid grey;
+    width : inherit;
+    height: 40px;
+    cursor: pointer;
+    background: #343a40;
+    color: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    font-family: nanumgothic;
+    margin-bottom: 5px;
+}
+
+.menuBox:hover {
+    transition: all 0.4s;
+}
+
+.boardSection {
+    background-color: #414040;
+    height: inherit;
+}
+
+
+

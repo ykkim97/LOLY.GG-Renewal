@@ -16,7 +16,6 @@ type Props = {
     proficiency : any;
     gameList : any;
     leagueList :any;
-    // onErrorImg,
     nickname : string;
     activeGames : any;
 }
@@ -26,7 +25,6 @@ const Match = ({
     proficiency,
     gameList, 
     leagueList, 
-    // onErrorImg,
     nickname,
     activeGames,
 } : Props) => {
@@ -107,7 +105,6 @@ const Match = ({
                                             <PlayedChampion 
                                                 gameData={gameData}
                                                 index={index}
-                                                // onErrorImg={onErrorImg}
                                                 nickname={nickname}
                                             />
                                         </div>
@@ -141,7 +138,6 @@ const Match = ({
                                                                     <ParticipantsData 
                                                                         participant={participant}
                                                                         index={index}
-                                                                        // onErrorImg={onErrorImg}
                                                                     />
                                                                 </React.Fragment>
                                                             )
@@ -160,7 +156,6 @@ const Match = ({
                                                                     <ParticipantsData 
                                                                         participant={participant}
                                                                         index={index}
-                                                                        // onErrorImg={onErrorImg}
                                                                     />
                                                                 </React.Fragment>
                                                             )
@@ -197,7 +192,6 @@ const Match = ({
                                             {/* 매치상세기록 컴포넌트 */}
                                             <MatchDetail 
                                                 gameData={gameData}
-                                                // onErrorImg={onErrorImg}
                                             />
                                         </div>
                                     }

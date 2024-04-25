@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import Match from "./Match";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; 
-import Background from "../components/Background";
 
 type Props = {
     searchText : string;
@@ -41,7 +40,7 @@ const Home = ({
     getActiveGames,
 } : Props) => {
     const searchInputRef = useRef(); // 검색창에 focus를 주기위해 useRef()를 사용하여 searchInputRef에 담기
-    const [nickname, setNickname] = useState(''); // searchText를 새로 저장하기 위해 nickname을 만듬
+    const [nickname, setNickname] = useState<string>(''); // searchText를 새로 저장하기 위해 nickname을 만듬
     // 검색버튼 onClick 함수
     const searchClick = () => {
         if (!searchText.trim()) {
@@ -52,7 +51,6 @@ const Home = ({
             toast.error('태그를 입력해주세요.');
             return;
         }
-
 
         getPlayerInformation();
         getPlayerGames();
@@ -70,11 +68,6 @@ const Home = ({
             searchClick();
         }
     }
-
-    useEffect(() => {
-        console.log(searchText,"searchText")
-        console.log(tagLineText,"tagLineText")
-    }, [searchText, tagLineText])
 
     return (
         <>
@@ -112,8 +105,6 @@ const Home = ({
                 </div>
             </div>
 
-            {/* <Background /> */}
-
             {/* 매치기록 */}
             <div className={style['match-record']}>
                 <Match 
@@ -121,7 +112,6 @@ const Home = ({
                     proficiency={proficiency}
                     gameList={gameList} 
                     leagueList={leagueList} 
-                    // onErrorImg={onErrorImg}
                     nickname={nickname}
                     activeGames={activeGames}
                 />
