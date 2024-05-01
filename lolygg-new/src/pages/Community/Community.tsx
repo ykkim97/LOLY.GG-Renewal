@@ -1,8 +1,8 @@
-import { Box, Drawer, Grid, InputBase, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Box, Button, Drawer, Grid, InputBase, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { styled, alpha } from '@mui/material/styles';
 import styles from "./Community.module.css";
 import LeftMenuSection from "./components/LeftMenuSection";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -67,10 +67,13 @@ const menus : MenuArrType = [
 
 
 const Community = () => {
+    const navigate = useNavigate();
     const [searchCondition, setSearchCondition] = useState<string>('');
     const handleChange = (event: SelectChangeEvent) => {
         setSearchCondition(event.target.value);
     };
+
+    
 
     return (
         <>
@@ -90,7 +93,7 @@ const Community = () => {
                 <Grid xs={10} className={styles['boardContainerSection']}>
                     <div className={styles['filterSection']}>
                         <Grid container sx={{ display:"flex",justifyContent:"space-between", alignItems:"center" }}>
-                            <Grid xs={9}>
+                            <Grid xs={8}>
                                 <Search >
                                     <SearchIconWrapper>
                                         <SearchIcon />
@@ -120,11 +123,13 @@ const Community = () => {
                                     </Select>
                                 </FormControl>
                             </Grid>
+                            <Grid xs={1}>
+                                <Button variant="contained" onClick={() => navigate(`/community/create`)}>글 작성</Button>
+                            </Grid>
                         </Grid>
                         
                     </div>
                     <div className={styles['boardSection']}>
-                        {/* <TableContainer component={Paper}> */}
                         <TableContainer component={Paper}>
                             <Table>
                                 <TableHead>
@@ -136,7 +141,6 @@ const Community = () => {
                                 </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                {/* {posts.map((post) => ( */}
                                     <TableRow>
                                         <TableCell>1</TableCell>
                                         <TableCell>제목1</TableCell>
@@ -155,7 +159,6 @@ const Community = () => {
                                         <TableCell>작성자3</TableCell>
                                         <TableCell>2024-05-03</TableCell>
                                     </TableRow>
-                                {/* ))} */}
                                 </TableBody>
                             </Table>
                         </TableContainer>

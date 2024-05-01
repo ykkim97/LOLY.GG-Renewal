@@ -9,6 +9,7 @@ import ItemInfo from './pages/ItemInfo/ItemInfo'
 import ItemDetailInfo from './pages/ItemInfo/ItemDetailInfo'
 import ChampionDetailInfo from './pages/ChampionInfo/ChampionDetailInfo'
 import Community from './pages/Community/Community'
+import CreatePage from './pages/Community/components/Create/CreatePage'
 
 
 function App() {
@@ -124,9 +125,9 @@ function App() {
         <Route
           path='/championInfo/:id'
           element={
-              <ChampionDetailInfo
-                  item={item}
-              />
+            <ChampionDetailInfo
+                item={item}
+            />
           }
       ></Route>
 
@@ -141,18 +142,25 @@ function App() {
         <Route
           path='/item/:id'
           element={
-              <ItemDetailInfo 
-                item={item}
-              />
+            <ItemDetailInfo 
+              item={item}
+            />
           }
         ></Route>
 
         <Route
           path='/community'
           element={
-              <Community 
+            <Community 
 
-              />
+            />
+          }
+        ></Route>
+
+        <Route
+          path='/community/create'
+          element={
+            <CreatePage />
           }
         ></Route>
       </Routes>
