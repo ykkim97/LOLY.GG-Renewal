@@ -1,4 +1,4 @@
-import { Box, Drawer, Grid, InputBase } from "@mui/material";
+import { Box, Drawer, Grid, InputBase, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { styled, alpha } from '@mui/material/styles';
 import styles from "./Community.module.css";
 import LeftMenuSection from "./components/LeftMenuSection";
@@ -67,9 +67,9 @@ const menus : MenuArrType = [
 
 
 const Community = () => {
-    const [age, setAge] = useState<string>('');
+    const [searchCondition, setSearchCondition] = useState<string>('');
     const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value);
+        setSearchCondition(event.target.value);
     };
 
     return (
@@ -103,20 +103,20 @@ const Community = () => {
                             </Grid>
                             <Grid xs={3}>
                                 <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                                    <InputLabel id="demo-select-small-label">Age</InputLabel>
+                                    <InputLabel id="demo-select-small-label">검색조건</InputLabel>
                                     <Select
                                         labelId="demo-select-small-label"
                                         id="demo-select-small"
-                                        value={age}
-                                        label="Age"
+                                        value={searchCondition}
+                                        label="검색조건"
                                         onChange={handleChange}
                                     >
                                         <MenuItem value="">
-                                            <em>None</em>
+                                            <em>선택안함</em>
                                         </MenuItem>
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                        <MenuItem value={30}>Thirty</MenuItem>
+                                        <MenuItem value="hit">조회순</MenuItem>
+                                        <MenuItem value="latest">최신순</MenuItem>
+                                        <MenuItem value="like">좋아요순</MenuItem>
                                     </Select>
                                 </FormControl>
                             </Grid>
@@ -124,7 +124,41 @@ const Community = () => {
                         
                     </div>
                     <div className={styles['boardSection']}>
-                        board section
+                        {/* <TableContainer component={Paper}> */}
+                        <TableContainer component={Paper}>
+                            <Table>
+                                <TableHead>
+                                <TableRow>
+                                    <TableCell sx={{ width: '5%' }} align="center">ID</TableCell>
+                                    <TableCell sx={{ width: '75%' }} align="center">제목</TableCell>
+                                    <TableCell sx={{ width: '10%' }} align="center">작성자</TableCell>
+                                    <TableCell sx={{ width: '10%' }} align="center">작성일</TableCell>
+                                </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                {/* {posts.map((post) => ( */}
+                                    <TableRow>
+                                        <TableCell>1</TableCell>
+                                        <TableCell>제목1</TableCell>
+                                        <TableCell>작성자1</TableCell>
+                                        <TableCell>2024-05-01</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>2</TableCell>
+                                        <TableCell>제목2</TableCell>
+                                        <TableCell>작성자2</TableCell>
+                                        <TableCell>2024-05-02</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell>3</TableCell>
+                                        <TableCell>제목3</TableCell>
+                                        <TableCell>작성자3</TableCell>
+                                        <TableCell>2024-05-03</TableCell>
+                                    </TableRow>
+                                {/* ))} */}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
                     </div>
                 </Grid>
             </Grid>
