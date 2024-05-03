@@ -52,13 +52,13 @@ const NaverLoginTitle = styled.span`
 const NaverLogin = () => {
     const naverRef = useRef()
 	const { naver } = window
-	const NAVER_CLIENT_ID = 'Ow5hi8FAfPC31fhIuxIe'; // 발급 받은 Client ID 입력 
-	const NAVER_CALLBACK_URL = 'R7MhU_Q9AT';// 작성했던 Callback URL 입력
+	const REACT_APP_NAVER_CLIENT_ID = 'Ow5hi8FAfPC31fhIuxIe'; // 발급 받은 Client ID 입력 
+	const REACT_APP_NAVER_CALLBACK_URL = 'R7MhU_Q9AT';// 작성했던 Callback URL 입력
 
 	const initializeNaverLogin = () => {
 		const naverLogin = new naver.LoginWithNaverId({
-			clientId: NAVER_CLIENT_ID,
-			callbackUrl: NAVER_CALLBACK_URL,
+			clientId: REACT_APP_NAVER_CLIENT_ID,
+			callbackUrl: REACT_APP_NAVER_CALLBACK_URL,
           // 팝업창으로 로그인을 진행할 것인지?           
 			isPopup: false,
           // 버튼 타입 ( 색상, 타입, 크기 변경 가능 )
