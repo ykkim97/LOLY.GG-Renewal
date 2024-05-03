@@ -1,0 +1,31 @@
+.container {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #21232B;
+}
+
+.loginBoxContainer {
+    width: 400px;
+    background-color: #343A40;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.loginPageTitle {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.loginPageDesc {
+    display: flex;
+    justify-content: center;
+    color: rgb(231, 225, 225);
+}

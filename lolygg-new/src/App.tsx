@@ -10,6 +10,7 @@ import ItemDetailInfo from './pages/ItemInfo/ItemDetailInfo'
 import ChampionDetailInfo from './pages/ChampionInfo/ChampionDetailInfo'
 import Community from './pages/Community/Community'
 import CreatePage from './pages/Community/components/Create/CreatePage'
+import NaverLogin from './components/login/NaverLogin'
 
 
 function App() {
@@ -113,6 +114,15 @@ function App() {
           }
         >
         </Route>
+
+        <Route
+          path="/login"
+          element={
+            <NaverLogin/>
+          }
+        >
+        </Route>
+
         <Route
           path="/championInfo"
           element={
