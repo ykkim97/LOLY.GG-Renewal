@@ -23,4 +23,4 @@ npm install
 npm start
 
 #### 주의사항
-API_KEY 추가 필요
+API_KEY 추가하여 실행 필요
