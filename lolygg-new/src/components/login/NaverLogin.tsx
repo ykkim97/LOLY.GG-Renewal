@@ -4,12 +4,15 @@ import { Box } from '@mui/material'
 import { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import styles from './NaverLogin.module.css'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useNavigate } from 'react-router-dom';
 
 const LoginBox = styled.div`
     width: 100%;
     height: 300px;
     // border: 1px solid black;
     display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
 `
@@ -50,6 +53,7 @@ const NaverLoginTitle = styled.span`
 
 
 const NaverLogin = () => {
+    const navigate = useNavigate();
     const naverRef = useRef()
 	const { naver } = window
 	const REACT_APP_NAVER_CLIENT_ID = 'Ow5hi8FAfPC31fhIuxIe'; // 발급 받은 Client ID 입력 
@@ -121,6 +125,7 @@ const NaverLogin = () => {
                     <NaverLoginBtn onClick={handleNaverLogin}>
                         <NaverIcon alt="navericon" />
                     </NaverLoginBtn>
+                    <ArrowBackIcon className={styles.backButton} onClick={() => navigate(-1)}/>
                 </LoginBox>
             </div>
 		</div>

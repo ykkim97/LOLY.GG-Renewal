@@ -13,12 +13,13 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import style from "./header.module.css";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const pages : string[] = ['전적검색', '챔피언', '아이템', '커뮤니티'];
 const settings : string[] = ['프로필', '즐겨찾기', '로그아웃'];
 
 function Header() {
+    const location = useLocation();
     const [loggedIn, setLoggedIn] = React.useState<boolean>(false);
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -50,6 +51,10 @@ function Header() {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
+
+    React.useEffect(() => {
+        console.log(location)
+    }, [])
 
     return (
         <AppBar position="static" className={style.container} sx={{ backgroundColor: 'rgb(15, 15, 15)' }}>
@@ -143,9 +148,14 @@ function Header() {
                     </Box>
 
                     {!loggedIn ? (
-                        <Box>
-                            <Button variant='contained' onClick={() => navigate('/login')}>로그인</Button>
-                        </Box>
+                        location.pathname == '/login' ? (
+                            <Box></Box>
+                        ) : (
+                            <Box>
+                                <Button variant='contained' onClick={() => navigate('/login')}>로그인</Button>
+                            </Box>
+                        )
+                        
                     ) : (
                         <Box sx={{ flexGrow: 0 }}>
                             <Tooltip title="Open settings">
