@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import style from "./header.module.css";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const pages : string[] = ['전적검색', '챔피언', '아이템', '커뮤니티'];
 const settings : string[] = ['프로필', '즐겨찾기', '로그아웃'];
@@ -51,6 +51,17 @@ function Header() {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        window.location.replace('/');
+    }
+
+    React.useEffect(() => {
+        // 로그인 상태를 localStorage의 access_token 유무로 판별
+        const accessToken = localStorage.getItem('token');
+        setLoggedIn(!!accessToken); // access_token이 존재하면 true, 아니면 false
+    }, []);
 
     React.useEffect(() => {
         console.log(location)
@@ -110,7 +121,7 @@ function Header() {
                         >
                         {pages.map((page) => (
                             <MenuItem key={page} onClick={() => handleMenuRoute(page)}>
-                            <Typography textAlign="center">{page}</Typography>
+                                <Typography textAlign="center">{page}</Typography>
                             </MenuItem>
                         ))}
                         </Menu>
@@ -152,7 +163,6 @@ function Header() {
                             <Box></Box>
                         ) : (
                             <Box>
-                                {/* <Button variant='contained' onClick={() => navigate('/login')}>로그인</Button> */}
                                 <Button variant='contained' href="/login">로그인</Button>
                             </Box>
                         )
@@ -180,11 +190,21 @@ function Header() {
                                 open={Boolean(anchorElUser)}
                                 onClose={handleCloseUserMenu}
                             >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
+                            {settings.map((setting) => {
+                                if (setting === '로그아웃') {
+                                    return(
+                                        <MenuItem key={setting} onClick={handleLogout}>
+                                            <Typography textAlign="center">{setting}</Typography>
+                                        </MenuItem>
+                                    )
+                                } else {
+                                    return(
+                                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                            <Typography textAlign="center">{setting}</Typography>
+                                        </MenuItem>
+                                    )
+                                }
+                            })}
                             </Menu>
                         </Box>
                     )}

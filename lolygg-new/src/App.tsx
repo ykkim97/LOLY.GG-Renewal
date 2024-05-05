@@ -23,6 +23,8 @@ function App() {
   const [proficiency, setProficiency] = useState([]); // 숙련도 정보
   const [activeGames, setActiveGames] = useState([]); // 현재 게임 정보
 
+  const [userInfo, setUserInfo] = useState();
+
   // 아이템 정보를 가져오는 함수
   const getItemInfomation = () => {
     axios.get('http://localhost:4000/item')
@@ -118,7 +120,10 @@ function App() {
         <Route
           path="/login"
           element={
-            <NaverLogin/>
+            <NaverLogin
+              userInfo={userInfo}
+              setUserInfo={setUserInfo}
+            />
           }
         >
         </Route>
