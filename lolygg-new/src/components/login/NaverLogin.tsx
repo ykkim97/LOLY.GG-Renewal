@@ -64,7 +64,7 @@ const NaverLogin = () => {
 		const naverLogin = new naver.LoginWithNaverId({
 			clientId: NAVER_CLIENT_ID,
 			callbackUrl: 'http://localhost:5173/',
-            clientSecret: 'R7MhU_Q9AT',
+            clientSecret: NAVER_CLIENT_SECRET,
           // 팝업창으로 로그인을 진행할 것인지?           
 			isPopup: false,
           // 버튼 타입 ( 색상, 타입, 크기 변경 가능 )
