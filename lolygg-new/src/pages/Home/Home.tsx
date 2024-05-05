@@ -69,6 +69,10 @@ const Home = ({
         }
     }
 
+    useEffect(() => {
+        console.log(window)
+    }, [])
+
     return (
         <>
             <div className={style['search-container']}>

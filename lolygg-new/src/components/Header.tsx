@@ -152,7 +152,8 @@ function Header() {
                             <Box></Box>
                         ) : (
                             <Box>
-                                <Button variant='contained' onClick={() => navigate('/login')}>로그인</Button>
+                                {/* <Button variant='contained' onClick={() => navigate('/login')}>로그인</Button> */}
+                                <Button variant='contained' href="/login">로그인</Button>
                             </Box>
                         )
                         
@@ -187,10 +188,6 @@ function Header() {
                             </Menu>
                         </Box>
                     )}
-
-
-
-                    
                 </Toolbar>
             </Container>
         </AppBar>
