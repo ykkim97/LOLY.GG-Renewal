@@ -1,0 +1,32 @@
+.CommunityInfo-title {
+    text-align: center;
+    margin: auto;
+    padding: 40px;
+    font-size: 25px;
+    background: linear-gradient(to right, #21232b, #3687e4, #21232b);
+    color: #ffffff;
+}
+
+.container {
+    background: linear-gradient(to right, #c3c5ce, #b4d1f3, #c3c5ce);
+}
+
+.formContainer {
+    padding: 20px;
+}
+
+.form-title {
+    background-color: white;
+}
+
+.form-content { 
+    background-color: white;
+}
+
+.create-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.create-button {
+
+}

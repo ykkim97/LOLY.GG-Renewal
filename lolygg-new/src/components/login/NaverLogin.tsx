@@ -43,19 +43,7 @@ const NaverIcon = styled.div`
 
 `
 
-const NaverLoginTitle = styled.span`
-	margin-left: 90px;
-	color: ${({ theme }) => theme.White};
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 24px;
-`
-type Props = {
-    userInfo : any;
-    setUserInfo : any;
-}
-
-const NaverLogin = ({ userInfo, setUserInfo } : Props)  => {
+const NaverLogin = ()  => {
     const navigate = useNavigate();
     const naverRef = useRef()
 	const { naver } = window
@@ -87,7 +75,7 @@ const NaverLogin = ({ userInfo, setUserInfo } : Props)  => {
         const userAccessToken = () => {
             window.location.href.includes('access_token') && getToken()
         }
-        
+
         const getToken = () => {
             const token : string | null = new URLSearchParams(window.location.hash.substring(1)).get('access_token')
         }

@@ -23,7 +23,7 @@ function App() {
   const [proficiency, setProficiency] = useState([]); // 숙련도 정보
   const [activeGames, setActiveGames] = useState([]); // 현재 게임 정보
 
-  const [userInfo, setUserInfo] = useState();
+  const [userAccessToken, setUserAccessToken] = useState(localStorage.getItem('token'));
 
   // 아이템 정보를 가져오는 함수
   const getItemInfomation = () => {
@@ -121,8 +121,6 @@ function App() {
           path="/login"
           element={
             <NaverLogin
-              userInfo={userInfo}
-              setUserInfo={setUserInfo}
             />
           }
         >

@@ -73,11 +73,9 @@ const Community = () => {
         setSearchCondition(event.target.value);
     };
 
-    
-
     return (
         <>
-            <h3 className={styles['CommunityInfo-title']}>커뮤니티</h3>
+            <h3 className={styles['CommunityInfo-title']}>커뮤니티</h3> 
             <Grid container className={styles['CommunityInfo-container']}>
                 <Grid xs={2} className={styles['leftSection']}>
                     <Grid className={styles['leftMenu']}>
